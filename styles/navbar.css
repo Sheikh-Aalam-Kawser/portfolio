@@ -84,3 +84,22 @@
   font-size: 0.7rem;
   color: var(--text-muted);
 }
+/* Responsive Mobile-First adjustments */
+@media (max-width: 768px) {
+  /* Hide the desktop menu items */
+  .nav-menu {
+    display: none;
+  }
+
+  /* Add your hamburger button styling here */
+  .hamburger-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Ensure the button is hidden on desktop */
+  .hamburger-button {
+    display: none;
+  }
+}
