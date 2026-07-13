@@ -1,0 +1,146 @@
+.matrix-wrapper {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Horizontal Action Filter System */
+.matrix-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.matrix-filter-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrix-filter-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.matrix-filter-btn.is-active {
+  color: var(--text-main);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Grid Layout Grid Settings */
+.matrix-split-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .matrix-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.skills-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* Individual Grid Skill Action Buttons */
+.skill-matrix-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-matrix-item:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.skill-matrix-item.is-selected {
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.03);
+}
+
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  transition: background-color 0.2s ease;
+}
+
+.skill-matrix-item.is-selected .skill-dot {
+  background-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.skill-title-text {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Telemetry Dashboard Data Viewport Display Box */
+.skill-telemetry-panel {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  min-height: 220px;
+}
+
+.panel-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.panel-skill-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.panel-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.5rem 0;
+}
+
+.panel-body h5 {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.panel-body p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

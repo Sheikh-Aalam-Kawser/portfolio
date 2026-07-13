@@ -1,0 +1,87 @@
+.command-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 6, 8, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.command-dialog {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 540px;
+  border-radius: 12px;
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  animation: scaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.command-search-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}
+
+.command-input {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.command-esc-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.command-list {
+  list-style: none;
+  padding: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+/* Visually highlight the keyboard-focused item */
+.command-item.is-active {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.command-shortcut {
+  font-family: inherit;
+  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.97); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
