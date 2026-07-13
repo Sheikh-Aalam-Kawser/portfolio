@@ -1,7 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/terminal.css';
 
-// ... (COMMAND_RESPONSES stays the same) ...
+const COMMAND_RESPONSES = {
+  help: `Available commands:
+  - whoami   : Display background information
+  - skills   : List technical core competencies
+  - projects : View top engineering work
+  - clear    : Clear the terminal output`,
+  
+  whoami: `Sheikh Aalam Kawser
+Role: Software Engineer / B.Tech IT Undergrad
+Location: NIT Srinagar
+Highlights: LeetCode Knight (1874 Peak), Competitive Programmer.`,
+
+  skills: `[Core CS] Java, C++, C, Data Structures & Algorithms, OOP, OS
+[Web] React, Node.js, Express.js, TypeScript, JavaScript, SQL
+[Cloud & AI] Google Cloud Run, Gemini API, OpenAI API`,
+
+  projects: `1. Nexus-AI (React, Cloud Run, Gemini API)
+2. Bank Account Management System (Java, OOP)
+3. Tesla Homepage Clone (HTML, CSS, Vanilla JS)`
+};
 
 export const Terminal = () => {
   const [input, setInput] = useState('');
@@ -12,14 +31,6 @@ export const Terminal = () => {
   
   const bodyRef = useRef(null);
   const inputRef = useRef(null);
-
-  // Focus terminal input after mount without autoFocus scroll jump
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      inputRef.current?.focus();
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Scrolls ONLY the internal terminal container
   useEffect(() => {
