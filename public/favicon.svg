@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Dark background with rounded corners -->
+  <rect width="100" height="100" rx="22" fill="#1e1e1e"/>
+  
+  <!-- Terminal green prompt text -->
+  <text 
+    x="50%" 
+    y="54%" 
+    font-family="monospace" 
+    font-size="48" 
+    font-weight="bold" 
+    fill="#4af626" 
+    text-anchor="middle" 
+    dominant-baseline="central"
+    letter-spacing="-2"
+  >
+    &gt;_
+  </text>
+</svg>
