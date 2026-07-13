@@ -2,37 +2,37 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../styles/command-menu.css';
 
 const COMMANDS = [
-  { 
-    id: 'hero', 
-    label: 'Scroll to Introduction', 
-    action: () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' }) 
+  {
+    id: 'hero',
+    label: 'Scroll to Introduction',
+    action: () => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
   },
-  { 
-    id: 'projects', 
-    label: 'Jump to Engineering Projects',  
-    action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) 
+  {
+    id: 'projects',
+    label: 'Jump to Engineering Projects',
+    action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   },
-  { 
-    id: 'experience', 
-    label: 'View Technical Core Architecture', 
-    action: () => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }) 
+  {
+    id: 'experience',
+    label: 'View Technical Core Architecture',
+    action: () => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })
   },
-  { 
-    id: 'resume', 
-    label: 'Download Engineering Resume', 
-    action: () => window.open('/Resume.pdf', '_blank') 
+  {
+    id: 'resume',
+    label: 'Download Engineering Resume',
+    action: () => window.open('/Resume.pdf', '_blank')
   },
-  { 
-    id: 'github', 
-    label: 'Open GitHub Profile', 
-    shortcut: '↗', 
-    action: () => window.open('https://github.com/Sheikh-Aalam-Kawser', '_blank') 
+  {
+    id: 'github',
+    label: 'Open GitHub Profile',
+    shortcut: '↗',
+    action: () => window.open('https://github.com/Sheikh-Aalam-Kawser', '_blank')
   },
-  { 
-    id: 'linkedin', 
-    label: 'Open LinkedIn Profile', 
-    shortcut: '↗', 
-    action: () => window.open('https://www.linkedin.com/in/sheikhaalam', '_blank') 
+  {
+    id: 'linkedin',
+    label: 'Open LinkedIn Profile',
+    shortcut: '↗',
+    action: () => window.open('https://www.linkedin.com/in/sheikhaalam', '_blank')
   }
 ];
 
@@ -49,7 +49,7 @@ export const CommandMenu = () => {
         setIsOpen((prev) => !prev);
         setActiveIndex(0); // Reset position on toggle
       }
-      
+
       if (e.key === 'Escape' && isOpen) {
         setIsOpen(false);
       }
@@ -85,8 +85,8 @@ export const CommandMenu = () => {
 
   return (
     <div className="command-overlay" onClick={() => setIsOpen(false)}>
-      <div 
-        className="command-dialog" 
+      <div
+        className="command-dialog"
         ref={menuRef}
         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
         role="dialog"
@@ -94,10 +94,10 @@ export const CommandMenu = () => {
         aria-label="Command Menu"
       >
         <div className="command-search-wrapper">
-          <input 
-            type="text" 
-            placeholder="Type a command or navigate..." 
-            autoFocus 
+          <input
+            type="text"
+            placeholder="Type a command or navigate..."
+            autoFocus
             className="command-input"
             aria-autocomplete="list"
           />
