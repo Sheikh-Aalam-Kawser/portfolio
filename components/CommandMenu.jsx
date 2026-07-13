@@ -20,7 +20,7 @@ const COMMANDS = [
   { 
     id: 'resume', 
     label: 'Download Engineering Resume', 
-    action: () => window.open('../public/Resume.pdf', '_blank') 
+    action: () => window.open('/Resume.pdf', '_blank') 
   },
   { 
     id: 'github', 
