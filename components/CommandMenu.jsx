@@ -20,7 +20,7 @@ const COMMANDS = [
   { 
     id: 'resume', 
     label: 'Download Engineering Resume', 
-    action: () => window.open('/Sheikh_Aalam_Kawser_Resume_v2.pdf', '_blank') 
+    action: () => window.open('../public/Resume.pdf', '_blank') 
   },
   { 
     id: 'github', 
