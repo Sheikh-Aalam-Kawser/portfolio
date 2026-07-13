@@ -26,6 +26,11 @@ export const Navbar = () => {
         </a>
 
         <nav className="nav-links">
+          {/* Add this checkbox and label block */}
+          <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+          <label htmlFor="nav-toggle" className="hamburger">
+            <span></span>
+          </label>
           <a href="#projects">Work</a>
           <a href="#experience">Experience</a>
           <button

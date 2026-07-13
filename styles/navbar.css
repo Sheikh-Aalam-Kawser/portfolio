@@ -84,22 +84,31 @@
   font-size: 0.7rem;
   color: var(--text-muted);
 }
-/* Responsive Mobile-First adjustments */
-@media (max-width: 768px) {
-  /* Hide the desktop menu items */
-  .nav-menu {
-    display: none;
-  }
-
-  /* Add your hamburger button styling here */
-  .hamburger-button {
-    display: block;
-  }
+/* 1. Hide the checkbox */
+.nav-toggle {
+  display: none;
 }
 
-@media (min-width: 769px) {
-  /* Ensure the button is hidden on desktop */
-  .hamburger-button {
-    display: none;
+/* 2. Style the Hamburger */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+}
+
+/* 3. Mobile responsiveness */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show on mobile */
+  }
+
+  /* When checkbox is checked, show the menu */
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
   }
 }
