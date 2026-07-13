@@ -1,50 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/navbar.css';
 
-export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+import { useState } from 'react';
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // If user scrolls past 20px, apply the scrolled styling state
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={`navbar-header ${isScrolled ? 'is-scrolled' : ''}`}>
-      <div className="navbar-container">
-        <a href="#hero" className="nav-logo">
-          Sheikh Aalam Kawser<span>.</span>
-        </a>
+    <nav className="flex items-center justify-between p-4 bg-white shadow-sm">
+      <div className="font-bold text-xl">AalamOS</div>
+      
+      {/* Hamburger Button (Visible only on mobile) */}
+      <button 
+        className="md:hidden p-2" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
 
-        <nav className="nav-links">
-          <a href="#projects">Work</a>
-          <a href="#experience">Experience</a>
-          <button
-            className="nav-cta"
-            onClick={() => {
-              window.dispatchEvent(
-                new KeyboardEvent('keydown', {
-                  key: 'k',
-                  metaKey: true,
-                  bubbles: true,
-                  cancelable: true
-                })
-              );
-            }}
-          >
-            Console <kbd>⌘K</kbd>
-          </button>
-        </nav>
+      {/* Menu Items */}
+      <div className={`${isOpen ? 'block' : 'hidden'} md:block absolute md:static top-16 left-0 w-full bg-white md:w-auto p-4 md:p-0 shadow-lg md:shadow-none`}>
+        <ul className="flex flex-col md:flex-row gap-6">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
       </div>
-    </header>
+    </nav>
   );
 };
