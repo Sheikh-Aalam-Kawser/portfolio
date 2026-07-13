@@ -85,11 +85,9 @@
   color: var(--text-muted);
 }
 /* 1. Hide the checkbox */
-.nav-toggle {
-  display: none;
-}
+.nav-toggle { display: none; }
 
-/* 2. Style the Hamburger (the three lines) */
+/* 2. Style the Hamburger */
 .hamburger {
   display: none; /* Hidden on desktop */
   cursor: pointer;
@@ -104,34 +102,32 @@
   display: block;
   background: black;
   height: 3px;
-  width: 30px;
+  width: 25px;
   position: absolute;
   top: 10px;
 }
-
 .hamburger span::before { content: ''; top: -8px; }
 .hamburger span::after { content: ''; top: 8px; }
 
 /* 3. Mobile responsiveness */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block; /* Show on mobile */
-  }
+  .hamburger { display: block; }
   
-  /* Hide the menu by default on mobile */
   .nav-menu {
-    display: none;
-  }
-
-  /* When checkbox is checked, show the menu */
-  .nav-toggle:checked ~ .nav-menu {
-    display: flex;
+    display: none; /* Hidden by default on mobile */
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
     background: white;
-    z-index: 100;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+
+  /* Show menu when checked */
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
   }
 }
