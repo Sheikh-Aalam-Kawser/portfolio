@@ -26,28 +26,32 @@ export const Navbar = () => {
         </a>
 
         <nav className="nav-links">
-          {/* Add this checkbox and label block */}
+          {/* Hamburger Toggle */}
           <input type="checkbox" id="nav-toggle" className="nav-toggle" />
           <label htmlFor="nav-toggle" className="hamburger">
             <span></span>
           </label>
-          <a href="#projects">Work</a>
-          <a href="#experience">Experience</a>
-          <button
-            className="nav-cta"
-            onClick={() => {
-              window.dispatchEvent(
-                new KeyboardEvent('keydown', {
-                  key: 'k',
-                  metaKey: true,
-                  bubbles: true,
-                  cancelable: true
-                })
-              );
-            }}
-          >
-            Console <kbd>⌘K</kbd>
-          </button>
+
+          {/* Wrap links in a div with class "nav-menu" so CSS can hide/show them */}
+          <div className="nav-menu">
+            <a href="#projects">Work</a>
+            <a href="#experience">Experience</a>
+            <button
+              className="nav-cta"
+              onClick={() => {
+                window.dispatchEvent(
+                  new KeyboardEvent('keydown', {
+                    key: 'k',
+                    metaKey: true,
+                    bubbles: true,
+                    cancelable: true
+                  })
+                );
+              }}
+            >
+              Console <kbd>⌘K</kbd>
+            </button>
+          </div>
         </nav>
       </div>
     </header>

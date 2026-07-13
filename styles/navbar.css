@@ -89,16 +89,38 @@
   display: none;
 }
 
-/* 2. Style the Hamburger */
+/* 2. Style the Hamburger (the three lines) */
 .hamburger {
   display: none; /* Hidden on desktop */
   cursor: pointer;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  position: relative;
 }
+
+.hamburger span, .hamburger span::before, .hamburger span::after {
+  display: block;
+  background: black;
+  height: 3px;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+}
+
+.hamburger span::before { content: ''; top: -8px; }
+.hamburger span::after { content: ''; top: 8px; }
 
 /* 3. Mobile responsiveness */
 @media (max-width: 768px) {
   .hamburger {
     display: block; /* Show on mobile */
+  }
+  
+  /* Hide the menu by default on mobile */
+  .nav-menu {
+    display: none;
   }
 
   /* When checkbox is checked, show the menu */
@@ -110,5 +132,6 @@
     left: 0;
     width: 100%;
     background: white;
+    z-index: 100;
   }
 }
